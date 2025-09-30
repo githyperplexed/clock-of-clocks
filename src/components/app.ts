@@ -14,16 +14,18 @@ class App {
     this.tick();
   }
 
+  interval() {
+    const time = now();
+
+    if(!equal(time, this.time)) {
+      this.time = Clock.tick(time);
+    }
+  }
+
   tick() {
     Clock.tick(this.time);
 
-    setInterval(() => {
-      const time = now();
-
-      if(!equal(time, this.time)) {
-        this.time = Clock.tick(time);
-      }
-    }, 100);
+    setInterval(() => this.interval(), 100);
   }
 }
 

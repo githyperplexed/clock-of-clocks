@@ -1,3 +1,14 @@
+:root {
+  --field-gap: 2rem;
+
+  --cell-size: 3rem;
+  --cell-border-size: max(calc(var(--cell-size) / 16), 2px);
+  --cell-background-color: oklch(20% 0 0);
+  --cell-border-color: oklch(30% 0 0);
+
+  --hand-color: oklch(75% 0.18 300);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -13,11 +24,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .clock {
   display: flex;
-  gap: 2rem;
+  gap: var(--field-gap);
 }
 
 .clock > .pair {
@@ -33,18 +45,18 @@ body {
 }
 
 .cell {
-  height: 2rem;
-  width: 2rem;
+  height: var(--cell-size);
+  width: var(--cell-size);
   position: relative;
-  background: linear-gradient(to right, oklch(10% 0 0), oklch(30% 0 0));
-  border: 2px solid oklch(30% 0 0);
+  background-color: var(--cell-background-color);
+  border: var(--cell-border-size) solid var(--cell-border-color);
   border-radius: 1000px;
 }
 
 .cell > .hand {
   width: 50%;
-  height: 2px;
-  background-color: oklch(75% 0.18 300);
+  height: var(--cell-border-size);
+  background-color: var(--hand-color);
   position: absolute;
   transform-origin: center left;
   top: 50%;
@@ -52,4 +64,37 @@ body {
   translate: 0% -50%;
   rotate: 135deg;
   transition: rotate 250ms;
+}
+
+.cell > .dot {
+  width: var(--cell-border-size);
+  height: var(--cell-border-size);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  background-color: var(--hand-color);
+  border-radius: 1000px;
+}
+
+@media (max-width: 1440px) {
+  :root {
+    --cell-size: 2rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --field-gap: 1rem;
+
+    --cell-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --field-gap: 0.5rem;
+
+    --cell-size: 1rem;
+  }
 }

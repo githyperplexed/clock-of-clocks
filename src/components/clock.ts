@@ -5,15 +5,9 @@ import type { Time } from "$src/types/time";
 
 class ClockComponent {
   create() {
-    return El.create({ 
-      type: "div", 
-      classes: "clock", 
-      children: [
-        Field.create("hours"), 
-        Field.create("minutes"), 
-        Field.create("seconds")
-      ]
-    });
+    const children = [Field.create("hours"), Field.create("minutes"), Field.create("seconds")];
+
+    return El.create({ type: "div", classes: "clock", children });
   }
 
   tick(time: Time) {
