@@ -1,0 +1,6 @@
+[build]
+builder = "NIXPACKS"
+
+[deploy]
+buildCommand = "bun run build"
+startCommand = "bun run start"

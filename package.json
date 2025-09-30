@@ -1,0 +1,21 @@
+{
+  "name": "clock-of-clocks",
+  "version": "1.0.0",
+  "description": "Clock made of clocks",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "start": "serve dist -s -p $PORT"
+  },
+  "author": "Hyperplexed",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.9.2",
+    "vite": "^7.1.7"
+  },
+  "dependencies": {
+    "serve": "^14.2.5"
+  }
+}

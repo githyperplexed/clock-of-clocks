@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: oklch(0% 0 0);
+}
+
+#app {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clock {
+  display: flex;
+  gap: 2rem;
+}
+
+.clock > .pair {
+  display: flex;
+  gap: 0.125rem;
+}
+
+.digit {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  gap: 0.125rem;
+}
+
+.cell {
+  height: 2rem;
+  width: 2rem;
+  position: relative;
+  background: linear-gradient(to right, oklch(10% 0 0), oklch(30% 0 0));
+  border: 2px solid oklch(30% 0 0);
+  border-radius: 1000px;
+}
+
+.cell > .hand {
+  width: 50%;
+  height: 2px;
+  background-color: oklch(75% 0.18 300);
+  position: absolute;
+  transform-origin: center left;
+  top: 50%;
+  left: 50%;
+  translate: 0% -50%;
+  rotate: 135deg;
+  transition: rotate 250ms;
+}
