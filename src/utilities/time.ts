@@ -12,8 +12,6 @@ export const now = (): Time => {
 
   const [hours, minutes, seconds] = string.split(":");
 
-  console.log(hours, minutes, seconds);
-
   return {
     hours,
     minutes,
