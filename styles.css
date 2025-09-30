@@ -2,7 +2,7 @@
   --field-gap: 2rem;
 
   --cell-size: 3rem;
-  --cell-border-size: max(calc(var(--cell-size) / 16), 2px);
+  --cell-border-size: max(calc(var(--cell-size) / 16), 1.5px);
   --cell-background-color: oklch(20% 0 0);
   --cell-border-color: oklch(30% 0 0);
 
@@ -96,5 +96,11 @@ body {
     --field-gap: 0.5rem;
 
     --cell-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --cell-size: 0.75rem;
   }
 }
