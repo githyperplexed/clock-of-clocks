@@ -4,5 +4,9 @@ import { rotation } from "$src/utilities/rotation";
 import type { DigitKey } from "$src/types/digit";
 
 export const cell = (value: string, index: number) => {
-  return digits[value as DigitKey][index] || rotation[" "];
+  const digit = digits[value as DigitKey];
+
+  if(digit) return digit[index];
+
+  return rotation[" "];
 }
