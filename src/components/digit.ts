@@ -1,7 +1,7 @@
 import { Cell } from "$src/components/cell";
 import { El } from "$src/components/element";
 
-import { cell } from "$src/utilities/cell";
+import { cell } from "$src/utilities/digit";
 
 class DigitComponent {
   create(index: number) {
