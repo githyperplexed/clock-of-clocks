@@ -1,8 +1,8 @@
 import type { Time } from "$src/types/time";
 
-export const now = (): Time => {
+export const now = (hour12: boolean = false): Time => {
   const time = new Date().toLocaleTimeString("en-US", { 
-    hour12: true,
+    hour12,
     hour: "2-digit",
     minute: "2-digit",
     second: "2-digit"
