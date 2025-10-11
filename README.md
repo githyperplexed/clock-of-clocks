@@ -24,7 +24,7 @@ bun run dev
 docker run -p 3000:3000 ghcr.io/ward-smeyers/clock-of-clocks:latest
 
 # Pull and run a specific version
-docker run -p 3000:3000 ghcr.io/ward-smeyers/clock-of-clocks:v1.0.0
+docker run -p 3000:3000 ghcr.io/ward-smeyers/clock-of-clocks:1.0.0
 ```
 
 #### Building Locally
