@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "start": "serve dist -s -p $PORT"
+    "start": "serve dist -s -p ${PORT:-3000}"
   },
   "author": "Hyperplexed",
   "license": "MIT",
