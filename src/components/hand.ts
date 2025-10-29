@@ -1,13 +1,11 @@
 import { El } from "$src/components/element";
 
-class HandComponent {
-  create() {
+export class Hand {
+  static create() {
     return El.create({ type: "div", classes: "hand" });
   }
 
-  tick(hand: HTMLElement, rotation: number) {
+  static tick(hand: HTMLElement, rotation: number) {
     hand.style.rotate = `${rotation}deg`;
   }
 }
-
-export const Hand = new HandComponent();

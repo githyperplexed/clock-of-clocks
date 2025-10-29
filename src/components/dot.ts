@@ -1,9 +1,7 @@
 import { El } from "$src/components/element";
 
-class DotComponent {
-  create() {
+export class Dot {
+  static create() {
     return El.create({ type: "div", classes: "dot" });
   }
 }
-
-export const Dot = new DotComponent();
