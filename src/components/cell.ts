@@ -2,8 +2,8 @@ import { Dot } from "$src/components/dot";
 import { El } from "$src/components/element";
 import { Hand } from "$src/components/hand";
 
-class CellComponent {
-  create(index: number) {
+export class Cell {
+  static create(index: number) {
     return El.create({ 
       type: "div", 
       classes: "cell", 
@@ -12,10 +12,8 @@ class CellComponent {
     });
   }
 
-  tick(cell: HTMLElement, rotation: number[]) {
+  static tick(cell: HTMLElement, rotation: number[]) {
     El.children(cell)
       .map((hand, index) => Hand.tick(hand, rotation[index]));
   }
 }
-
-export const Cell = new CellComponent();

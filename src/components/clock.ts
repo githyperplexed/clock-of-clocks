@@ -3,14 +3,14 @@ import { Field } from "$src/components/field";
 
 import type { Time } from "$src/types/time";
 
-class ClockComponent {
-  create() {
+export class Clock {
+  static create() {
     const children = [Field.create("hours"), Field.create("minutes"), Field.create("seconds")];
 
     return El.create({ type: "div", classes: "clock", children });
   }
 
-  tick(time: Time) {
+  static tick(time: Time) {
     Field.tick("hours", time.hours);
     Field.tick("minutes", time.minutes);
     Field.tick("seconds", time.seconds);
@@ -18,5 +18,3 @@ class ClockComponent {
     return time;
   }
 }
-
-export const Clock = new ClockComponent();
